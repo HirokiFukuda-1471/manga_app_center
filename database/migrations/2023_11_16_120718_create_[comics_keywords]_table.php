@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id('user_id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+        Schema::create('comics_keywords', function (Blueprint $table) {
+            $table->id('comics_keywords_id');
+            $table->unsignedBigInteger('comic_id');
+            $table->foreign('comic_id')->references('comic_id')->on('comics');
+            $table->unsignedBigInteger('keyword_id');
+            $table->foreign('keyword_id')->references('keyword_id')->on('keywords');
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        //
     }
 };
