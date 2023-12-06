@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComicsController;  //外部にあるComicrsControllerクラスをインポート。
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ComicsController::class, 'index']); 
+Route::post('/comics', [ComicsController::class, 'store']);
+Route::get('/comics/create', [ComicsController::class, 'create']);
+Route::get('/comics/{comic}', [ComicsController::class ,'show']);
+//'/comics/{対象データのID}'にGetリクエストが来たらComicsControllerのshowメソッドを実行する

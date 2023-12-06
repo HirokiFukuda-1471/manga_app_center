@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('keywords', function (Blueprint $table) {
-            $table->id('keyword_id');
+            //$table->id('keyword_id');
+            $table->bigIncrements('keyword_id');
             $table->string('keyword_type', 50);
         });
     }
