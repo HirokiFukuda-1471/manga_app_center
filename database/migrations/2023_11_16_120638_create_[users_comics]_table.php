@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users_comics', function (Blueprint $table) {
-            $table->id('users_comics_id');
+            //$table->id('users_comics_id');
+            $table->bigIncrements('users_comics_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->unsignedBigInteger('comic_id');
