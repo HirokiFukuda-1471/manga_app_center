@@ -1,9 +1,7 @@
-<!DOCTYPE HTML>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>deliverables</title>
-    </head>
+<x-app-layout>
+    <x-slot name="header">
+        create
+    </x-slot>
     <body>
         <h1>manga_app_center</h1>
         <form action="/comics" method="POST" enctype="multipart/form-data">
@@ -68,4 +66,4 @@
             <a href="/">戻る</a>
         </div>
     </body>
-</html>
+</x-app-layout>

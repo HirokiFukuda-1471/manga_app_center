@@ -43,6 +43,6 @@ class User extends Authenticatable
     ];
     //comicに対するリレーション
     public function comics(){
-        return $this->belongsToMany(Comic::class);
+        return $this->belongsToMany(Comics::class);
     }
 }

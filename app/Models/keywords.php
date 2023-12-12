@@ -13,6 +13,10 @@ class keywords extends Model
     'keyword_type',
     ];
     
+    public function getByCategory(int $limit_count = 5)
+    {
+         return $this->comics()->with('keywords')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
     
     //comicに対するリレーション
     public function comics(){

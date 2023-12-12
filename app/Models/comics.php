@@ -28,6 +28,6 @@ class comics extends Model
     }
     //userに対するリレーション
     public function users(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(Users::class);
     }
 }
