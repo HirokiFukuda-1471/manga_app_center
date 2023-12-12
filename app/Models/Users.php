@@ -41,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //comicに対するリレーション
+    public function comics(){
+        return $this->belongsToMany(Comic::class);
+    }
 }

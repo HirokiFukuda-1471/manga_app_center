@@ -18,4 +18,6 @@ Route::get('/', [ComicsController::class, 'index']);
 Route::post('/comics', [ComicsController::class, 'store']);
 Route::get('/comics/create', [ComicsController::class, 'create']);
 Route::get('/comics/{comic}', [ComicsController::class ,'show']);
-//'/comics/{対象データのID}'にGetリクエストが来たらComicsControllerのshowメソッドを実行する
+Route::put('/comics/{comic}', [ComicsController::class, 'update']);
+Route::get('/comics/{comic}/edit', [ComicsController::class, 'edit']);
+Route::delete('/comics/{comic}', [ComicsController::class,'delete']);

@@ -26,8 +26,10 @@ class ComicRequest extends FormRequest
         return [
             'comic.title' => 'required|string|max:100',
             'comic.author' => 'required|string|max:100',
+            'comic.day_of_week' => 'required',
             'comic.outline' => 'required|string|max:4000',
-            'comic.image' => 'required|image',
+            'keywords_array'=>'required',
+            'keyword_type'=> 'unique:keywords,keyword_type',
         ];
     }
 }

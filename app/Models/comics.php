@@ -22,5 +22,12 @@ class comics extends Model
     // updated_atで降順に並べたあと、limitで件数制限をかける
     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
-    
+    //keywordに対するリレーション
+    public function keywords(){
+        return $this->belongsToMany(keywords::class,'comics_keywords','comic_id','keyword_id');
+    }
+    //userに対するリレーション
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 }
