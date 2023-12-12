@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>deliverables</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
+<x-app-layout>
+    <x-slot name="header">
+        index
+    </x-slot>
     <body>
         <h1>manga_app_center</h1>
+        <p>ログインユーザー：{{ Auth::user()->name }}</p>
         <a href='/comics/create'>create</a>
         <div class='comics'>
             @foreach ($comics as $comic)
@@ -39,4 +36,4 @@
             }
         </script>
     </body>
-</html>
+</x-app-layout>
