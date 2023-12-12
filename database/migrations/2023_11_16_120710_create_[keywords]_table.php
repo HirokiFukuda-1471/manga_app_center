@@ -17,6 +17,7 @@ return new class extends Migration
             //$table->id('keyword_id');
             $table->bigIncrements('keyword_id');
             $table->string('keyword_type', 50);
+            $table->unique(['keyword_type']);
         });
     }
 

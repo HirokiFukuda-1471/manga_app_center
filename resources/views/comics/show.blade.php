@@ -31,13 +31,23 @@
                 <h3>概要</h3>
                 <p>{{ $comics->outline }}</p>    
             </div>
+            
+            <h3>キーワード</h3>
+            <h5 class='keyword'>
+            
+            @foreach($comics->keywords as $keyword)   
+                {{ $keyword->keyword_type }}
+            @endforeach
+            
+            </h5>
                         
             @if($comics->image_url)
             <div>
                 <img src="{{ $comics->image_url }}" alt="画像が読み込めません。"/>
             </div>
             @endif
-
+            
+            <div class="edit"><a href="/comics/{{ $comics->comic_id }}/edit">編集</a></div>
         </div>
         <div class="footer">
             <a href="/">戻る</a>
