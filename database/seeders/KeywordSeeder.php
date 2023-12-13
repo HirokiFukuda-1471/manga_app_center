@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class KeywordSeeder extends Seeder
 {
@@ -14,7 +16,8 @@ class KeywordSeeder extends Seeder
      */
     public function run()
     {
-                DB::table('posts')->insert([
+                DB::table('keywords')->insert([
                 'keyword_type' => '異世界',
+                ]);
     }
 }
