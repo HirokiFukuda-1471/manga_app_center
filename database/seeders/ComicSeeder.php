@@ -14,14 +14,14 @@ class ComicSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('comics')->insert([
-                'title' => '',//漫画のタイトル
-                'author'=>'',//作者
-                'day_of_week'=>'',//連載曜日又は完結
-                'outline' => '',//漫画の概要
-                'image_url '=>'',//漫画のサムネイル
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-         ]);
+        //DB::table('comics')->insert([
+                //'title' => '',//漫画のタイトル
+                //'author'=>'',//作者
+                //'day_of_week'=>'',//連載曜日又は完結
+                //'outline' => '',//漫画の概要
+                //'image_url '=>'',//漫画のサムネイル
+                //'created_at' => new DateTime(),
+                //'updated_at' => new DateTime(),
+         //]);
     }
 }
